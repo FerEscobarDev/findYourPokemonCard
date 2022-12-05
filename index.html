@@ -8,74 +8,60 @@
     </head>
     <body>
         <div id="app">
-            <div class="container">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <h3>Pikachu</h3>
-                                <span><span>40</span> HP</span>
-                            </div>
-                            
-                            <picture class="image">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="Pikachu">
-                            </picture>
+            <div id="container" class="container">
 
-                            <div class="card-header-footer">
-                                <span>Alt: <span>0.4</span> m</span>
-                                <span>Peso: <span>10</span> kg</span>
-                            </div>
-                        </div>
+                <template id="card">
+                    <div class="card">
                         <div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h3 id="title"></h3>
+                                        <span><span id="hp"></span> HP</span>
+                                    </div>
+                                    
+                                    <picture class="image">
+                                        <img id="img" src="" alt="">
+                                    </picture>
+
+                                    <div class="card-header-footer">
+                                        <span>Alt: <span id="altura"></span> m</span>
+                                        <span>Peso: <span id="peso"></span> kg</span>
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </template>
 
-                <div class="card yellow">
-                    <div class="card-content yellow">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <h3>Pikachu</h3>
-                                <span><span>40</span> HP</span>
-                            </div>
-                            
-                            <picture class="image yellow yellow">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="Pikachu">
-                            </picture>
-
-                            <div class="card-header-footer">
-                                <span>Alt: <span>0.4</span> m</span>
-                                <span>Peso: <span>10</span> kg</span>
-                            </div>
-                        </div>
+                <!-- TEMPLATE SKELETON -->
+                <template id="card-skeleton">
+                    <div class="card card-skeleton skeleton">
                         <div>
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="text-skeleton skeleton"></div>
+                                        <span class="text-skeleton skeleton"></span>
+                                    </div>
+                                    
+                                    <picture class="image image-skeleton skeleton">
+                                        <img alt="">
+                                    </picture>
+
+                                    <div class="card-header-footer">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <h3>Pikachu</h3>
-                                <span><span>40</span> HP</span>
-                            </div>
-                            
-                            <picture class="image">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg" alt="Pikachu">
-                            </picture>
-
-                            <div class="card-header-footer">
-                                <span>Alt: <span>0.4</span> m</span>
-                                <span>Peso: <span>10</span> kg</span>
-                            </div>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                </div>
-
-               
+                </template>
         
         </div>
         

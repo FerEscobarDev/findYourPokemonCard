@@ -21,11 +21,11 @@ const pokemonList = async () => {
 
             const pokemonsFetch = results.map( async ({ url }) => await pokemon(url))
 
-            Promise.allSettled(pokemonsFetch).then(pokemonsArray => {
+            return Promise.allSettled(pokemonsFetch).then(pokemonsArray => {
 
                 const pokemons = pokemonsArray.map(({value}) => {
                     const { 
-                        name, height, 
+                        name, height, weight,
                         sprites:{other:{dream_world:{front_default}}},
                         stats, types
                     } = value;
@@ -33,12 +33,14 @@ const pokemonList = async () => {
                     return {
                         name: name,
                         height: height,
+                        weight: weight,
                         img: front_default,
                         stats: stats,
                         types: types,
                     }
                 });
-                console.log(pokemons)
+
+                return pokemons;
             })
 
         }else{
@@ -50,4 +52,39 @@ const pokemonList = async () => {
     }
 }
 
-pokemonList();
+
+addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('#container');
+    const card = document.querySelector('#card');
+    const cardSkeleton = document.querySelector(' #card-skeleton');
+
+    for(let i = 0; i < 20; i++){
+        container.append(cardSkeleton.content.cloneNode(true));
+    }
+
+    const pokemons = pokemonList();
+
+    pokemons.then((pokemons) => {
+        container.innerHTML = '';
+
+        pokemons.forEach((pokemon) => {
+            const div = card.content.cloneNode(true);
+
+            div.querySelector('#title').textContent = pokemon.name;
+            div.querySelector('#hp').textContent = pokemon.stats[0].base_stat;
+            div.querySelector('#img').src = pokemon.img;
+            div.querySelector('#img').alt = pokemon.name;
+            div.querySelector('#altura').textContent = pokemon.height/10;
+            div.querySelector('#peso').textContent = pokemon.weight;
+
+            container.append(div);
+        });
+    })
+
+
+    console.log(container, 'container')
+    console.log(card, ' card')
+})
+
+
+
