@@ -8,62 +8,72 @@
     </head>
     <body>
         <div id="app">
+            <header>
+                <img class="logo" src="/public/img/logo.png" alt="Pokémon">
+            </header>
             <div id="container" class="container">
 
-                <template id="card">
-                    <div class="card">
-                        <div>
-                            <div class="card-content">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <h3 id="title"></h3>
-                                        <span><span id="hp"></span> HP</span>
-                                    </div>
-                                    
-                                    <picture class="image">
-                                        <img id="img" src="" alt="">
-                                    </picture>
-
-                                    <div class="card-header-footer">
-                                        <span>Alt: <span id="altura"></span> m</span>
-                                        <span>Peso: <span id="peso"></span> kg</span>
-                                    </div>
-                                </div>
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-
-                <!-- TEMPLATE SKELETON -->
-                <template id="card-skeleton">
-                    <div class="card card-skeleton skeleton">
-                        <div>
-                            <div class="card-content">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <div class="text-skeleton skeleton"></div>
-                                        <span class="text-skeleton skeleton"></span>
-                                    </div>
-                                    
-                                    <picture class="image image-skeleton skeleton">
-                                        <img alt="">
-                                    </picture>
-
-                                    <div class="card-header-footer">
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-        
+                
+            </div>
+            <div>
+                <button id="previous">Previous</button>
+                <button id="next">Next</button>
+            </div>        
         </div>
+
+        <template id="card">
+            <div id="body-card" class="card">
+                <div>
+                    <div id="card-content" class="card-content">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h3 id="title"></h3>
+                                <span><span id="hp"></span> HP</span>
+                            </div>
+                            
+                            <picture id="image" class="image">
+                                <img id="img" src="" alt="">
+                            </picture>
+
+                            <div id="img-footer" class="card-header-footer">
+                                <span>Alt: <span id="altura"></span> m</span>
+                                <span>Peso: <span id="peso"></span> kg</span>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- TEMPLATE SKELETON -->
+        <template id="card-skeleton">
+            <div class="card card-skeleton skeleton">
+                <div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="text-skeleton skeleton"></div>
+                                <span class="text-skeleton skeleton"></span>
+                            </div>
+                            
+                            <picture class="image image-skeleton skeleton">
+                                <img alt="">
+                            </picture>
+
+                            <div class="card-header-footer text-skeleton-footer skeleton">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
         
         <script type="module" src="/main.js"></script>
     </body>
